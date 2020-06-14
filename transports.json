@@ -1,0 +1,7 @@
+{
+  "transports": [
+    {"model": "Boeing 777", "b-passenger-capacity": 14, "e-passenger-capacity": 300},
+    {"manufacturer": "BMW", "model": "M3", "passenger-capacity": 4},
+    {"model":  "ICE", "number-wagons": 5, "w-passenger-capacity": 30}
+  ]
+}
