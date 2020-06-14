@@ -23,10 +23,6 @@ public class GetObject {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(GetObject.class);
 
-  public static void main(String[] args) throws IOException {
-    getSelectedObject(getProperty("bucket.name"), getProperty("bucket.file.key"));
-  }
-
   public static String getSelectedObject(String bucketName, String key) throws IOException {
     Regions clientRegion = Regions.EU_WEST_3;
 

@@ -21,7 +21,7 @@ public class PassengersCalculatorShould {
   }
 
   @Test
-  public void parseAJsonObjectToCarAndCalculateCarPassengers(){       //TODO : it seems from the and keyword that we have to make separate method for parsing and calculating
+  public void parseAJsonObjectToCarAndCalculateCarPassengers(){
     String jsonExample = JsonExampleFactory.createJsonExample(JsonExampleCase.CAR,1);
     String resultJson = this.passengersCalculator.calculatePassengers(jsonExample);
     String expectedJson = "{\r\n" +
@@ -76,6 +76,18 @@ public class PassengersCalculatorShould {
         "  \"planes\" : 628,\r\n" +
         "  \"trains\" : 300,\r\n" +
         "  \"cars\" : 8\r\n"
+        + "}";
+    assertEquals(expectedJson,resultJson);
+  }
+
+  @Test
+  public void parseAJsonObjectOfEachKindAndCalculateAllPassengersHundredTimesEachTransport(){
+    String jsonExample = JsonExampleFactory.createJsonExample(JsonExampleCase.CAR_TRAIN_PLANE, 100);
+    String resultJson = this.passengersCalculator.calculatePassengers(jsonExample);
+    String expectedJson = "{\r\n" +
+        "  \"planes\" : 31400,\r\n" +
+        "  \"trains\" : 15000,\r\n" +
+        "  \"cars\" : 400\r\n"
         + "}";
     assertEquals(expectedJson,resultJson);
   }
