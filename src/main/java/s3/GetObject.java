@@ -29,8 +29,7 @@ public class GetObject {
     S3Object fullObject = null, objectPortion = null, headerOverrideObject = null;
     try {
       BasicAWSCredentials awsCreds =
-          new BasicAWSCredentials(
-              getProperty("access.key"), getProperty("secret.access.key"));
+          new BasicAWSCredentials(getProperty("access.key"), getProperty("secret.access.key"));
       AmazonS3 s3Client =
           AmazonS3ClientBuilder.standard()
               .withRegion(clientRegion)
@@ -79,7 +78,8 @@ public class GetObject {
   }
 
   public static String getProperty(String propertyKey) {
-    try (InputStream input = GetObject.class.getClassLoader().getResourceAsStream("aws-config.properties")) {
+    try (InputStream input =
+        GetObject.class.getClassLoader().getResourceAsStream("aws-config.properties")) {
       Properties prop = new Properties();
       if (input == null) {
         throw new RuntimeException("Unable to find aws-config.properties");
